@@ -82,7 +82,8 @@
     },
     "whosonfirst": {
       "datapath": "/mnt/pelias/whosonfirst",
-      "importVenues": false
+      "importVenues": false,
+      "polygons": false
     }
   }
 }
