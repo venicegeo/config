@@ -28,7 +28,8 @@
       ]
     },
     "whosonfirst": {
-      "datapath": "/media/hdd/whosonfirst"
+      "datapath": "/media/hdd/whosonfirst",
+      "polygons": false
     }
   }
 }
