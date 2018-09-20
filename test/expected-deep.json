@@ -128,7 +128,9 @@
     "whosonfirst": {
       "datapath": "~/whosonfirst",
       "importVenues": false,
-      "polygons": false
+      "polygons": false,
+      "simplifyPolygons": false,
+      "simplificationRate": 0.0003
     }
   }
 }

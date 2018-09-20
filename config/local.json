@@ -29,7 +29,9 @@
     },
     "whosonfirst": {
       "datapath": "/media/hdd/whosonfirst",
-      "polygons": false
+      "polygons": false,
+      "simplifyPolygons": false,
+      "simplificationRate": 0.0003
     }
   }
 }
