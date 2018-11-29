@@ -1,12 +1,22 @@
-## Installation
+>This repository is part of the [Pelias](https://github.com/pelias/pelias)
+>project. Pelias is an open-source, open-data geocoder originally sponsored by
+>[Mapzen](https://www.mapzen.com/). Our official user documentation is
+>[here](https://github.com/pelias/documentation).
+
+# Pelias Configuration
+
+This repository defines standard configuration for all parts of the Pelias geocoder. It contains tools for Pelias packages to read from configuration in a standardized way, and for Pelias users to set up their own configuration.
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/pelias/config.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/pelias/config.png?branch=master)](https://travis-ci.org/pelias/config)
+
+[![NPM](https://nodei.co/npm/pelias-config.png?downloads=true&stars=true)](https://nodei.co/npm/pelias-config)
+
+## Installation
 
 ```bash
 $ npm install pelias-config
 ```
-
-[![NPM](https://nodei.co/npm/pelias-config.png?downloads=true&stars=true)](https://nodei.co/npm/pelias-config)
 
 ## Usage
 
@@ -62,35 +72,41 @@ You can test the result of merging your env config with the following bash oneli
 ```bash
 npm install pelias-config; \
 PELIAS_CONFIG=/path/config.json \
-node -e "console.log( require('pelias-config').generate().stringify() );";
+node -e "console.log( JSON.stringify(require('pelias-config').generate(), null, 2) );";
 ```
 
 ### Validation
 
-Aside from `deep`, the `generate` function takes an additional parameter named `schema` that uses [Joi](https://www.npmjs.com/package/joi) to validate that the configuration is useable.  An error is thrown if the generated configuration does not validate against the schema.  
+Aside from `deep`, the `generate` function takes an additional parameter named `schema` that uses [Joi](https://www.npmjs.com/package/joi) to validate that the configuration is useable.  An error is thrown if the generated configuration does not validate against the schema.
 
 ### Exporting & Debugging
 
-The generated config will be a [mergeable](https://github.com/pelias/mergeable) object:
+The generated config will be a standard Javascript object:
 
 ```javascript
 var config = require('pelias-config'),
     settings = config.generate();
 
-// strip out all functions etc and produce a plain js object copy
-var copy = settings.export();
+console.log(JSON.stringify(settings, null, 2));
+// {
+//    "api": {
+//       ...
+//    },
+//    "imports": {
+//      ...
+//    }
+//  }
 ```
 
-You can pretty print the generated config:
+You can pretty print the generated config with any package you like or with `JSON.stringify`.
+Using the third parameter to `JSON.stringify` for indentation may be helpful:
 
 ```javascript
 var config = require('pelias-config'),
     settings = config.generate();
 
-console.log( settings.stringify() );
+console.log( JSON.stringify(settings, null, 2) );
 ```
-
-see https://github.com/pelias/mergeable for a full list of methods
 
 ## NPM Module
 
@@ -112,6 +128,4 @@ $ npm test
 
 ### Continuous Integration
 
-Travis tests every release against Node.js 4 and 6
-
-[![Build Status](https://travis-ci.org/pelias/config.png?branch=master)](https://travis-ci.org/pelias/config)
+Travis tests every release against all supported Node.js versions.
