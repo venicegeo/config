@@ -35,7 +35,10 @@
     }
   },
   "dbclient": {
-    "statFrequency": 10000
+    "statFrequency": 10000,
+    "maxActiveRequests": 10,
+    "resumeRequestCount": 2,
+    "batchSize": 500
   },
   "api": {
     "accessLog": "common",
