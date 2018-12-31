@@ -11,6 +11,7 @@
     }],
     "log": [{
       "type": "stdio",
+      "json": false,
       "level": [ "error", "warning" ]
     }]
   },
@@ -37,6 +38,36 @@
     "host": "http://pelias.mapzen.com/",
     "indexName": "pelias",
     "version": "1.0",
+    "targets": {
+      "auto_discover": false,
+      "canonical_sources": ["whosonfirst", "openstreetmap", "openaddresses", "geonames"],
+      "layers_by_source": {
+        "openstreetmap": [ "address", "venue", "street" ],
+        "openaddresses": [ "address" ],
+        "geonames": [
+          "country", "macroregion", "region", "county", "localadmin", "locality", "borough",
+          "neighbourhood", "venue"
+        ],
+        "whosonfirst": [
+          "continent", "empire", "country", "dependency", "macroregion", "region", "locality",
+          "localadmin", "macrocounty", "county", "macrohood", "borough", "neighbourhood",
+          "microhood", "disputed", "venue", "postalcode", "continent", "ocean", "marinearea"
+        ]
+      },
+      "source_aliases": {
+        "osm": [ "openstreetmap" ],
+        "oa":  [ "openaddresses" ],
+        "gn":  [ "geonames" ],
+        "wof": [ "whosonfirst" ]
+      },
+      "layer_aliases": {
+        "coarse": [
+          "continent", "empire", "country", "dependency", "macroregion", "region", "locality",
+          "localadmin", "macrocounty", "county", "macrohood", "borough", "neighbourhood",
+          "microhood", "disputed", "postalcode", "continent", "ocean", "marinearea"
+        ]
+      }
+    },
     "auth": false
   },
   "schema": {
@@ -60,7 +91,11 @@
   "imports": {
     "adminLookup": {
       "enabled": true,
-      "maxConcurrentRequests": 100
+      "maxConcurrentRequests": 100,
+      "usePostalCities": false
+    },
+    "blacklist": {
+      "files": []
     },
     "geonames": {
       "datapath": "./data",
@@ -84,7 +119,9 @@
     "whosonfirst": {
       "datapath": "/mnt/pelias/whosonfirst",
       "importVenues": false,
-      "polygons": false
+      "polygons": false,
+      "simplifyPolygons": false,
+      "simplificationRate": 0.0003
     }
   }
 }
