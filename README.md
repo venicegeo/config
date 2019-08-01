@@ -1,21 +1,19 @@
->This repository is part of the [Pelias](https://github.com/pelias/pelias)
+>This repository is fork of [Pelias](https://github.com/pelias/pelias)
 >project. Pelias is an open-source, open-data geocoder originally sponsored by
 >[Mapzen](https://www.mapzen.com/). Our official user documentation is
->[here](https://github.com/pelias/documentation).
+>[here](https://github.com/eventkit/pelias-documentation).
 
 # Pelias Configuration
 
 This repository defines standard configuration for all parts of the Pelias geocoder. It contains tools for Pelias packages to read from configuration in a standardized way, and for Pelias users to set up their own configuration.
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/pelias/config.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/pelias/config.png?branch=master)](https://travis-ci.org/pelias/config)
+[![Build Status](https://travis-ci.org/eventkit/pelias-config.png?branch=master)](https://travis-ci.org/eventkit/pelias-config)
 
-[![NPM](https://nodei.co/npm/pelias-config.png?downloads=true&stars=true)](https://nodei.co/npm/pelias-config)
 
 ## Installation
 
 ```bash
-$ npm install pelias-config
+$ npm install https://github.com/eventkit/pelias-config
 ```
 
 ## Usage
@@ -107,12 +105,6 @@ var config = require('pelias-config'),
 
 console.log( JSON.stringify(settings, null, 2) );
 ```
-
-## NPM Module
-
-The `pelias-config` npm module can be found here:
-
-[https://npmjs.org/package/pelias-config](https://npmjs.org/package/pelias-config)
 
 ## Contributing
 
