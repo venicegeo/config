@@ -60,13 +60,15 @@
           "continent", "empire", "country", "dependency", "macroregion", "region", "locality",
           "localadmin", "macrocounty", "county", "macrohood", "borough", "neighbourhood",
           "microhood", "disputed", "venue", "postalcode", "continent", "ocean", "marinearea"
-        ]
+        ],
+        "geographicnames": ["country", "macroregion", "region", "county", "localadmin", "locality", "borough", "neighbourhood", "venue"]
       },
       "source_aliases": {
         "osm": [ "openstreetmap" ],
         "oa":  [ "openaddresses" ],
         "gn":  [ "geonames" ],
-        "wof": [ "whosonfirst" ]
+        "wof": [ "whosonfirst" ],
+        "gndb" : ["geographicnames"]
       },
       "layer_aliases": {
         "coarse": [
