@@ -1,6 +1,6 @@
 {
   "esclient": {
-    "apiVersion": "5.6",
+    "apiVersion": "6.8",
     "keepAlive": true,
     "requestTimeout": "120000",
     "hosts": [{
@@ -42,7 +42,6 @@
   },
   "api": {
     "accessLog": "common",
-    "textAnalyzer": "libpostal",
     "indexName": "pelias",
     "host": "http://pelias.mapzen.com/",
     "version": "1.0",
@@ -81,7 +80,8 @@
     "auth": false
   },
   "schema": {
-    "indexName": "pelias"
+    "indexName": "pelias",
+    "typeName": "doc"
   },
   "logger": {
     "level": "debug",
@@ -90,12 +90,7 @@
   },
   "acceptance-tests": {
     "endpoints": {
-      "local": "http://localhost:3100/v1/",
-      "dev-cached": "http://pelias.dev.mapzen.com.global.prod.fastly.net/v1/",
-      "dev": "http://pelias.dev.mapzen.com/v1/",
-      "prod": "http://search.mapzen.com/v1/",
-      "prod-uncached": "http://pelias.mapzen.com/v1/",
-      "prodbuild": "http://pelias.prodbuild.mapzen.com/v1/"
+      "local": "http://localhost:3100/v1/"
     }
   },
   "imports": {
