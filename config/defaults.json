@@ -72,7 +72,6 @@
         ]
       }
     },
-    "auth": false
   },
   "schema": {
     "indexName": "pelias",
