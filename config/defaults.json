@@ -71,7 +71,7 @@
           "microhood", "disputed", "postalcode", "continent", "ocean", "marinearea"
         ]
       }
-    },
+    }
   },
   "schema": {
     "indexName": "pelias",
