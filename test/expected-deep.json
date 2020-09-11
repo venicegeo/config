@@ -1,6 +1,6 @@
 {
   "esclient": {
-    "apiVersion": "6.8",
+    "apiVersion": "7.x",
     "keepAlive": true,
     "requestTimeout": "120000",
     "hosts": [{
@@ -76,12 +76,11 @@
           "microhood", "disputed", "postalcode", "continent", "ocean", "marinearea"
         ]
       }
-    },
-    "auth": false
+    }
   },
   "schema": {
     "indexName": "pelias",
-    "typeName": "doc"
+    "typeName": "_doc"
   },
   "logger": {
     "level": "debug",
@@ -97,7 +96,7 @@
     "adminLookup": {
       "enabled": true,
       "maxConcurrentRequests": 100,
-      "usePostalCities": false
+      "usePostalCities": true
     },
     "blacklist": {
       "files": []
@@ -129,10 +128,10 @@
     },
     "whosonfirst": {
       "datapath": "~/whosonfirst",
-      "importVenues": false,
       "polygons": false,
       "simplifyPolygons": false,
-      "simplificationRate": 0.0003
+      "simplificationRate": 0.0003,
+      "importPostalcodes": true
     }
   }
 }
